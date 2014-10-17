@@ -28,6 +28,34 @@ end
 	end
 end
 
+User.create(
+	email: "pablo@naps.com",
+	password: "lol",
+	first_name: "Pablo",
+	last_name: "Lopez"
+	)
+User.create(
+	email: "sean@naps.com",
+	password: "lol",
+	first_name: "Sean",
+	last_name: "Ellis"
+	)
+User.create(
+	email: "rob@naps.com",
+	password: "lol",
+	first_name: "Rob",
+	last_name: "Yang"
+	)
+User.create(
+	email: "mark@naps.com",
+	password: ":(",
+	first_name: "Mark",
+	last_name: "McQuillen"
+	)
+
+
+
+
 
 
 
