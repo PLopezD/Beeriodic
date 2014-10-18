@@ -63,9 +63,9 @@ end
 
 1000.times do
 	Rating.create(
-		user_id: 				[*1..(User.all.length)].sample,
+		user_id: 			[*1..(User.all.length)].sample,
 		score:      		[*1..5].sample,
-		rateable_type: 	"Family",
+		rateable_type: 		"Family",
 		rateable_id: 		[*1..(Family.all.length)].sample
 		)
 end
