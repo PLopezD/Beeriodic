@@ -11,9 +11,16 @@
 
   <div>
     <h2>Rated Beers</h2>
-    <% @user_info.ratings.each do |rating| %>
-      <p><%= rating.rateable_id %></p>
-    <% end %>
+    <ol>
+      
+
+      
+
+
+      <% @ratings_for_beers.each do |rating| %>
+      <li><%= rating.beer.name %> - <%= rating.score %></li>
+      <% end %>
+    </ol>
 
   </div>
 

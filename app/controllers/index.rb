@@ -16,7 +16,18 @@ get '/users/:id' do
 		session[:id] = User.find(params[:id])
 		@user_info = User.find(params[:id])
 
+    # @ratings_for_beers = @user_info.ratings.where("rateable_type = ?", "Beer")
+    # @beers_rated = []
+    # @ratings_for_beers.each do |rating|
+    #   @beers_rated << Beer.find(rating.rateable_id)
+    # end
 
+    @ratings_for_beers = Rating.includes(:beers)
+    # @beers_rated = []
+    # @ratings_for_beers.each do |rating|
+    #   @beers_rated << Beer.find(rating.rateable_id)
+    # end
+    
 
 
 	erb :user_profile 
