@@ -6,16 +6,41 @@ get '/' do
 erb :index
 end
 
-#  # ------ >> 
+# ------ >> 
 
-#  #user section
-# get '/users/:id' do
-# 	#user profile page
-# 	#link to update and delete pages 
-# 		session[:id] = User.find(params[:id])
-# 		@user_info = User.find(params[:id])
-# 	erb :user_profile 
-# end
+#user section
+get '/users/:id' do
+	#user profile page
+	#link to update and delete pages 
+		session[:id] = User.find(params[:id])
+		@user_info = User.find(params[:id])
+
+
+    # User's rated beers
+    @ratings_for_beers = @user_info.ratings.where("rateable_type = ?", "Beer")
+
+    @beers_rated = {}
+
+    @ratings_for_beers.each do |rating|
+      @beers_rated.store(Beer.find(rating.rateable_id).name, rating.score)
+    end
+
+    @beers_rated = @beers_rated.sort_by { |beer, score| beer }
+
+    # User's rated families
+    @ratings_for_families = @user_info.ratings.where("rateable_type = ?", "Family")
+
+    @families_rated = {}
+
+    @ratings_for_families.each do |rating|
+      @families_rated.store(Family.find(rating.rateable_id).name, rating.score)
+    end
+
+    @families_rated = @families_rated.sort_by { |family, score| family }
+
+
+	erb :user_profile 
+end
 
 # post '/register' do
 # 	#create user
