@@ -5,6 +5,9 @@
   <div>
     <p>Email Address: <%= @user_info.email %></p>
     <p>Name: <%= @user_info.first_name %> <%= @user_info.last_name %></p>
+    <% if session[:user_id] == @user_info.id %>
+      <a href="/users/<%= @user_info.id %>/edit">Edit profile</a>
+    <% end %>
   </div>
 
 

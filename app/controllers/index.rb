@@ -12,7 +12,7 @@ end
 get '/users/:id' do
 	#user profile page
 	#link to update and delete pages 
-		session[:id] = User.find(params[:id])
+		session[:user_id] = User.find(3).id
 		@user_info = User.find(params[:id])
 
 
@@ -48,12 +48,19 @@ end
 # 	redirect '/users/:id'
 # end
 
+get '/users/:id/edit' do
+  @user_info = User.find(params[:id])
+  erb :user_profile_edit
+end
 
-# patch '/users/:id' do
-# 	#update user
-# 	User.find(params[:id]).update(email: params[:email],password: params[:password],first_name: params[:first_name],last_name: params[:last_name])
-# 	redirect '/users/:id'
-# end
+patch '/users/:id' do
+	#update user
+	User.find(params[:id]).update(email: params[:email], password: params[:password], first_name: params[:first_name],last_name: params[:last_name])
+
+  user_id = params[:id]
+
+	redirect "/users/#{user_id}"
+end
 
 # delete '/users/:id' do
 # 	#delete user
