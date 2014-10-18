@@ -1,0 +1,432 @@
+h1 {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Irish Growler', arial, serif;
+    text-shadow: 2px 2px 2px #555;
+    margin: 10px 0 15px 0!important;
+}
+
+h2, h3 {
+	margin: 0px;
+}
+
+body{
+    _text-align: center;
+    background: black;
+    margin:0px;
+}
+
+iframe {
+    vertical-align:middle !important;
+}
+
+.fb_ltr {
+    margin-top: 5px;
+}
+
+.infoPanel{
+    display: none;
+    position:absolute;
+    margin-left: 342px;
+    width:511px;
+    margin-top: 30px;
+    color: white;
+}
+
+.infoPanel a{
+	color:#FFCC33;
+}
+
+.infoPanel a:hover{
+	color:orange;
+}
+
+.infoPanel #infoName{
+    font-weight: bold;
+}
+
+.infoPanel #infoText{
+}
+
+.infoPanel #infoExample{
+    font-style: italic;
+}
+
+.container{
+    _text-align: left;
+}
+
+.title {
+    margin: 5px 0 5px 0;
+}
+
+.moving {
+    z-index: 30!important;
+    position:absolute!important;
+}
+
+.type-title{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    font-size: 10px;
+    font-family: arial;
+    height: 30px;
+}
+
+.group-title{
+    padding: 5px 0 0 0;
+    border-color: white;
+    border-style: solid;
+    border-width: 2px 0 0 0;
+    color: white;
+    text-align: center;
+    margin:8px 0;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 10px;
+}
+
+.group-title.ale{
+    color: #cfcfcf;
+    border-color: #cfcfcf;
+}
+
+.group-title.lager{
+    color: orange;
+    border-color: orange;
+}
+
+
+.element .content, .element .mask, .element .blank{
+    margin-top: 2px;
+}
+
+.mask{
+    line-height: 55px;
+    width: 55px;
+    background: green;
+    background: url('images/fakesquare.png');
+    position:relative;
+    z-index:100;
+}
+
+.content{
+    height: 51px;
+    width: 51px;
+    border: 2px solid blue;
+    position:relative;
+    background: green;
+    z-index: 1;
+    margin-top: -55px!important;
+    font-size: 50px;
+}
+
+.content .top {
+    font-size: 11%;
+    height: 26%;
+    margin: 2px 2px 0 2px;
+}
+
+.content .top .left {
+    float: left;
+    background: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-left: -2px;
+    margin-top: -2px;
+    width: 13px;
+    height: 13px;
+    padding-top: 2px;
+    font-size: 6pt!important;
+}
+
+.content .top .right{
+    text-align: right;
+}
+
+.content .middle{
+    margin: 0 2px;
+    text-align:center;
+    font-size: 18%;
+    font-weight: bold;
+    height: 48%;
+    font-weight: bold;
+}
+
+.content .bottom{
+    margin: 0 2px 2px 2px;
+    font-size: 10%;
+    height: 26%;
+}
+
+.content .bottom .left {
+    float: left;
+}
+
+.content .bottom .right{
+    text-align: right;
+}
+
+.element .blank{
+    line-height: 55px;
+    width: 55px;
+    background: transparent;
+}
+
+.column-1 .element .content{
+    background-color: #F8E8A0;
+    border-color: #F5CC61;
+}
+
+.column-1 .type-title{
+    color: #F5CC61;
+}
+
+.column-2 .element .content{
+    background-color: #C6D671;
+    border-color: #649025;
+}
+
+.column-2 .type-title{
+    color: #649025;
+}
+
+.column-3 .element .content{
+    background-color: #D4D4D4;
+    border-color: #9A9A9A;
+}
+
+.column-3 .type-title{
+    color: #9A9A9A;
+}
+
+.column-4 .element .content{
+    background-color: #FD9F57;
+    border-color: #D56418;
+}
+
+.column-4 .type-title{
+    color: #D56418;
+}
+
+.column-5 .element .content{
+    background-color: #E0ADCF;
+    border-color: #85268E;
+}
+
+.column-5 .type-title{
+    color: #85268E;
+}
+
+.column-6 .element .content{
+    background-color: #F7BCD8;
+    border-color: #F261B2;
+}
+
+.column-6 .type-title{
+    color: #F261B2;
+}
+
+.column-7 .element .content{
+    background-color: #DEC38B;
+    border-color: #BA830A;
+}
+
+.column-7 .type-title{
+    color: #BA830A;
+}
+
+.column-8 .element .content{
+    background-color: #A48A5E;
+    border-color: #523B0D;
+}
+
+.column-8 .type-title{
+    color: #523B0D;
+}
+
+.column-9 .element .content{
+    background-color: #8A8A8A;
+    border-color: #414141;
+}
+
+.column-9 .type-title{
+    color: #414141;
+}
+
+.column-10 .element .content{
+    background-color: #707070;
+    border-color: #464646;
+}
+
+.column-10 .type-title{
+    color: #464646;
+}
+
+.column-11 .element .content{
+    background-color: #EEF3DA;
+    border-color: #7E7E54;
+}
+
+.column-11 .type-title{
+    color: #7E7E54;
+}
+
+.column-12 .element .content{
+    background-color: #82BCC7;
+    border-color: #537986;
+}
+
+.column-12 .type-title{
+    color: #537986;
+}
+
+.column-13 .element .content{
+    background-color: #E8DBE0;
+    border-color: #CAA6B2;
+}
+
+.column-13 .type-title{
+    color: #CAA6B2;
+}
+
+.column-14 .element .content{
+    background-color: #BAA799;
+    border-color: #5F4D48;
+}
+.column-14 .type-title{
+    color: #5F4D48;
+}
+
+.left {
+    float: left;
+}
+
+.srm-title {
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+.srm-tile {
+    margin: 5px 1px;
+    width: 20px;
+    height: 20px;
+}
+
+.srm-value {
+    font-family: arial;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.beerInfo{
+    display: none;
+}
+
+.beerExample{
+    display: none;
+}
+
+
+.leftAdPanel {
+    left:90px;
+}
+
+.rightAdPanel {
+    left:-360px;
+}
+
+.leftAdPanel, .rightAdPanel {
+    z-index: 40;
+    filter: alpha(opacity=95);
+    opacity: .95;
+    background-color: #141414;
+    position:absolute;
+    border: 10px solid #1A1A1A;
+    top:120px;
+    width:320px;
+    padding:10px;
+}
+
+.adTitle {
+    font-size:20px;
+    color:#FFFFFF;
+}
+.adDesc {
+    font-size:14px;
+    color:#999999;
+}
+.adSite a {
+    font-size:12px;
+    text-decoration:none;
+    color:#BA830A;
+}
+.adAddress {
+    font-size:12px;
+    color:#537986;
+}
+.adMapLink {
+    float:right;
+    border:0px;
+}
+
+.ad {
+    cursor: pointer;
+}
+
+.leftAds, .rightAds {
+    width: 90px;
+    top: 80px;
+    position: absolute;
+}
+.leftAds div, .rightAds div {
+    padding:3px;
+    padding-bottom: 30px;
+    border: 1px dashed #000;
+}
+.leftAds div:hover, .rightAds div:hover {
+    background-color: #141414;
+    border: 1px dashed #3A3A3A;
+}
+.leftAds h3, .rightAds h3 {
+    font-size: 12px;
+    color: #FFF;
+}
+.leftAds p, .rightAds p {
+    font-size: 9px;
+    color: #999;
+}
+.ad .adSite, .ad .adAddress {
+    display:none;
+}
+
+.footer {
+    margin-top:10px;
+    background-color:#1A1A1A;
+    border-top: 1px #2A2A2A solid;
+}
+.footer a {
+    color:#FFFFFF;
+    text-decoration:none;
+}
+.footer a:hover {
+    color:#BA830A;
+}
+
+.adsWrapper {
+    position:absolute;
+    margin-top:70px;
+    width: 90px;
+}
+
+.selected {
+	border-color: #FFCC33!important;
+	background-color: #FFFF29!important;
+}

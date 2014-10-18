@@ -1,82 +1,82 @@
-# landing page 
+# # landing page 
 get '/' do
-	# beeriodic table
-	# assuming session[:id] = user_id
-	@user_info = User.find(session[:id])
+# 	# beeriodic table
+# 	# assuming session[:id] = user_id
+# 	@user_info = User.find(session[:id])
 erb :index
 end
 
- # ------ >> 
+#  # ------ >> 
 
- #user section
-get '/users/:id' do
-	#user profile page
-	#link to update and delete pages 
-		session[:id] = User.find(params[:id])
-		@user_info = User.find(params[:id])
-	erb :user_profile 
-end
+#  #user section
+# get '/users/:id' do
+# 	#user profile page
+# 	#link to update and delete pages 
+# 		session[:id] = User.find(params[:id])
+# 		@user_info = User.find(params[:id])
+# 	erb :user_profile 
+# end
 
-post '/register' do
-	#create user
-	User.create(email: params[:email],password: params[:password],first_name: params[:first_name],last_name: params[:last_name])
-	redirect '/users/:id'
-end
-
-
-patch '/users/:id' do
-	#update user
-	User.find(params[:id]).update(email: params[:email],password: params[:password],first_name: params[:first_name],last_name: params[:last_name])
-	redirect '/users/:id'
-end
-
-delete '/users/:id' do
-	#delete user
-	User.find(params[:id]).destroy
-	redirect '/'
-end
-# ----->>
+# post '/register' do
+# 	#create user
+# 	User.create(email: params[:email],password: params[:password],first_name: params[:first_name],last_name: params[:last_name])
+# 	redirect '/users/:id'
+# end
 
 
-#families section 
-get '/families/:id' do
- # individual family profile page
- # loop with users that have rated beer
+# patch '/users/:id' do
+# 	#update user
+# 	User.find(params[:id]).update(email: params[:email],password: params[:password],first_name: params[:first_name],last_name: params[:last_name])
+# 	redirect '/users/:id'
+# end
 
-	@current_family = Family.find(params[:id])
-	erb :family_profile
-end
-
-post '/families/:id/rating' do
-	#ajax post 
-	#success("Thanks for your input!")
-	# => no redirect
-end
-
-# ----->>
-
-#beers section
-
-get '/beers' do
-	#show all beers
-	@beers = Beer.all
-	erb :beer_profile
-end
+# delete '/users/:id' do
+# 	#delete user
+# 	User.find(params[:id]).destroy
+# 	redirect '/'
+# end
+# # ----->>
 
 
+# #families section 
+# get '/families/:id' do
+#  # individual family profile page
+#  # loop with users that have rated beer
 
-get '/beers/:id' do
-	 # individual beer profile page
-	 # includes submit rate link - post 'beer/:id/rating' 
-	 # loop with users that have rated beer
-	 # show the family a beer belongs to
-	 # show beer info
-	 @beer_info = Beer.find(params[:id])
- erb :beer_profile
-end
+# 	@current_family = Family.find(params[:id])
+# 	erb :family_profile
+# end
 
-post '/beers/:id/rating' do
-	#ajax post 
-	#success("Thanks for your input!")
-	# => no redirect
-end
+# post '/families/:id/rating' do
+# 	#ajax post 
+# 	#success("Thanks for your input!")
+# 	# => no redirect
+# end
+
+# # ----->>
+
+# #beers section
+
+# get '/beers' do
+# 	#show all beers
+# 	@beers = Beer.all
+# 	erb :beer_profile
+# end
+
+
+
+# get '/beers/:id' do
+# 	 # individual beer profile page
+# 	 # includes submit rate link - post 'beer/:id/rating' 
+# 	 # loop with users that have rated beer
+# 	 # show the family a beer belongs to
+# 	 # show beer info
+# 	 @beer_info = Beer.find(params[:id])
+#  erb :beer_profile
+# end
+
+# post '/beers/:id/rating' do
+# 	#ajax post 
+# 	#success("Thanks for your input!")
+# 	# => no redirect
+# end
