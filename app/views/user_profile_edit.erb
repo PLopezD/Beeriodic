@@ -1,0 +1,56 @@
+<div class="container">
+
+  <h1>TEST</h1>
+
+  <h2>Edit profile</h2>
+
+
+
+  <form action="/users/<%= @user_info.id %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <label for="first_name">First name:</label>
+    <input type="text" name="first_name" value="<%= @user_info.first_name %>"/>
+    <br>
+
+    <label for="last_name">Last name:</label>
+    <input type="text" name="last_name" value="<%= @user_info.last_name %>"/>
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="text" name="email" value="<%= @user_info.email %>"/>
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" value=""/>
+    <br>
+    
+    <table>
+        <tr>
+            <td><input type="submit" value="Confirm changes"></td>
+            <td><a href="/users/<%= @user_info.id %>"><input type="button" value="Cancel" /></a></td>
+        </tr>
+    </table>
+ 
+  </form>
+  <br>
+  <table>
+    <tr>
+        <td><form action="/users/<%= @user_info.id %>" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete">
+        </form></td>
+    </tr>
+  </table>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
