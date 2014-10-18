@@ -1,8 +1,21 @@
 <div class='containter'>
   <h1>Title</h1>
-  <p>Helllllzzzzz yeahhhhh</p>
-  <form action='/url' method="post">
-    <input type='url' value='www.example.com'>
-    <input type='submit' value='shorten!'>
-  </form>
+  
+  <h2>User profile</h2>
+  <div>
+    <p>Email Address: <%= @user_info.email %></p>
+    <p>Name: <%= @user_info.first_name %> <%= @user_info.last_name %></p>
+  </div>
+
+
+
+  <div>
+    <h2>Rated Beers</h2>
+    <% @user_info.ratings.each do |rating| %>
+      <p><%= rating.rateable_id %></p>
+    <% end %>
+
+  </div>
+
+
 </div>
