@@ -12,6 +12,11 @@
   background: url(src/grid.png); 
 }
 
+#beerlist{
+  margin-left: 40%;
+  padding-top: .5%;
+  color: white;
+}
 
 /* Columns
 -------------------------------------------------------------- */

@@ -23,20 +23,15 @@ $(document).ready(function(){
 // );
     $("div.element div.mask").on('click', function(){
         $(this).addClass('clicked')
-        console.log($(".clicked .left"))
-        .$.ajax({
-            url: '/family/:id/beers',
-            type: 'GET',
-            dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-            data: {param1: 'value1'},
-        })
-        .success(function() {
-            console.log("success");
-        })
-        
-
-        // $('#beerlist').text('replace old text')
-
+        // test = $('.clicked .top .left').innerHTML;
+         // test = document.getElementById("left").innerHTML;
+        myVar = $(".clicked").find('.top .left').val();
+        console.log(myVar);
         // console.log("in the click listener")  
+        $('#beerlist').text('replace old text')
+
+        // $(this).removeClass('clicked')
     })
 })
+
+// var myVar = $("#start").find('.myClass').val();
