@@ -9,6 +9,60 @@ th {
   text-align: left;
 }
 
+/*---------Family Rating Display-----------*/
+.family-title {
+	display: inline-block;
+	/*border: 1px solid red;*/
+	vertical-align: middle;	
+}
+
+.family-info {
+	/*border: 1px solid black;*/
+	width: 100%;
+}
+
+.family-rating {
+	vertical-align: middle;
+	display: inline-block;
+	/*border: 1px solid blue;*/
+}
+
+.family-rating ul {
+	margin: 0;
+}
+
+.family-rating li {
+	display: inline-block;
+	margin: 0;
+}
+
+/*----------Beer Rating Display------------*/
+.beer-title {
+	display: inline-block;
+	/*border: 1px solid red;*/
+	vertical-align: middle;	
+}
+
+.beer-info {
+	/*border: 1px solid black;*/
+	width: 100%;
+}
+
+.beer-rating {
+	vertical-align: middle;
+	display: inline-block;
+	/*border: 1px solid blue;*/
+}
+
+.beer-rating ul {
+	margin: 0;
+}
+
+.beer-rating li {
+	display: inline-block;
+	margin: 0;
+}
+
 
 .family-table td {
 	border: 1px dotted black;

@@ -1,5 +1,17 @@
 <div class='containter'>
-  <h1><%= @family.name %></h1>
+	<div class='family-info'>
+	  <h1 class = 'family-title'><%= @family.name %></h1>
+	  <div class='family-rating'>
+	  	<ul>
+			<% @family.get_avg.times do %>
+				<li id="1"><i class="fa fa-star"></i></li>
+			<% end %>
+			<% (5-@family.get_avg).times do %>
+				<li id="1"><i class="fa fa-star-o"></i></li>
+			<% end %>
+	  	</ul>
+	  </div>
+  </div>
 	
   <p><a href="http://www.wikipedia.org/wiki/<%= @family.name %>">learn more</p></a>
   <h3>Description:</h3>
@@ -25,4 +37,5 @@
 		</tr>
 		<% end %>
 	</table>
+	<a href="/families/<%= (@family.id + 1) %>">next family >></a>
 </div>

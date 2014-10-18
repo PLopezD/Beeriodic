@@ -1,5 +1,17 @@
 <div class='containter'>
-  <h1><%= @beer.name %></h1>
+  <div class='beer-info'>
+	  <h1 class='beer-title'><%= @beer.name %></h1>
+	  <div class='beer-rating'>
+	  	<ul>
+			<% @beer.get_avg.times do %>
+				<li id="1"><i class="fa fa-star"></i></li>
+			<% end %>
+			<% (5-@beer.get_avg).times do %>
+				<li id="1"><i class="fa fa-star-o"></i></li>
+			<% end %>
+	  	</ul>
+	  </div>
+  </div>
 	
   <p><a href="http://www.wikipedia.org/wiki/<%= @beer.name %>">learn more</p></a>
   <h3>Description:</h3>
