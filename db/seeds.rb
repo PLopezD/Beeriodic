@@ -18,7 +18,7 @@ end
 		Beer.create(
 			name: beer["name"],
 			description: beer["description"],
-			abv: beer[:abv],
+			abv: beer["abv"],
 			ibu: [*5..100].sample,
 			srm: [*6..14].sample,
 			brewer: beer["brewery"]["name"],

@@ -1,8 +1,25 @@
 <div class='containter'>
-  <h1>Title</h1>
-  <p>Helllllzzzzz yeahhhhh</p>
-  <form action='/url' method="post">
-    <input type='url' value='www.example.com'>
-    <input type='submit' value='shorten!'>
-  </form>
+  <h1><%= @beer.name %></h1>
+	
+  <p><a href="http://www.wikipedia.org/wiki/<%= @beer.name %>">learn more</p></a>
+  <h3>Description:</h3>
+	<div class='beer-description'>
+		<%= @beer.description %>
+	</div>
+	<h3>Family of this beer:</h3>
+		<a href="/families/<%= @beer.family.id %>"><%= @beer.family.name %></a>
+	<h3>Ratings for this beer:</h3>
+	<table class="beer-table">
+		<tr>
+				<td>User</td>
+				<td>Rating</td>
+		</tr>
+		<% @beer.ratings.each do |rating| %>
+		<tr>
+			<td><%= rating.user.first_name %> <%= rating.user.last_name %></td>
+			<td><%=rating.score%></td>
+		</tr>
+		<% end %>
+	</table>
+	<a href="/beers/<%= (@beer.id + 1) %>">next beer >></a>
 </div>

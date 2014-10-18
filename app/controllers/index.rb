@@ -39,13 +39,12 @@ end
 
 
 # #families section 
-# get '/families/:id' do
-#  # individual family profile page
-#  # loop with users that have rated beer
-
-# 	@current_family = Family.find(params[:id])
-# 	erb :family_profile
-# end
+get '/families/:id' do
+ # individual family profile page
+ # loop with users that have rated beer
+	@family = Family.find(params[:id])
+	erb :family_profile
+end
 
 # post '/families/:id/rating' do
 # 	#ajax post 
@@ -65,15 +64,15 @@ end
 
 
 
-# get '/beers/:id' do
-# 	 # individual beer profile page
-# 	 # includes submit rate link - post 'beer/:id/rating' 
-# 	 # loop with users that have rated beer
-# 	 # show the family a beer belongs to
-# 	 # show beer info
-# 	 @beer_info = Beer.find(params[:id])
-#  erb :beer_profile
-# end
+get '/beers/:id' do
+	# individual beer profile page
+	# includes submit rate link - post 'beer/:id/rating' 
+	# loop with users that have rated beer
+	# show the family a beer belongs to
+	# show beer info
+	@beer = Beer.find(params[:id])
+ 	erb :beer_profile
+end
 
 # post '/beers/:id/rating' do
 # 	#ajax post 

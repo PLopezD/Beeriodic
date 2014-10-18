@@ -1,8 +1,28 @@
 <div class='containter'>
-  <h1>Title</h1>
-  <p>Helllllzzzzz yeahhhhh</p>
-  <form action='/url' method="post">
-    <input type='url' value='www.example.com'>
-    <input type='submit' value='shorten!'>
-  </form>
+  <h1><%= @family.name %></h1>
+	
+  <p><a href="http://www.wikipedia.org/wiki/<%= @family.name %>">learn more</p></a>
+  <h3>Description:</h3>
+	<div class='family-description'>
+		<%= @family.description %>
+	</div>
+	<h3>Beers in this family:</h3>
+	<ol>
+		<% @family.beers.each do |beer| %>
+			<li><a href="/beers/<%= beer.id %>"><%= beer.name %></li></a>
+			<% end %>
+	</ol>
+	<h3>Ratings for this family:</h3>
+	<table class="family-table">
+		<tr>
+				<td>User</td>
+				<td>Rating</td>
+		</tr>
+		<% @family.ratings.each do |rating| %>
+		<tr>
+			<td><%= rating.user.first_name %> <%= rating.user.last_name %></td>
+			<td><%=rating.score%></td>
+		</tr>
+		<% end %>
+	</table>
 </div>
