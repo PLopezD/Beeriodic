@@ -11,18 +11,40 @@
 
   <div>
     <h2>Rated Beers</h2>
-    <ol>
-      
 
-      
+      <table cellpadding="0" cellspacing="0" class="">
+        <tr>
+          <td>Beers</td><td></td><td>Scores</td>
+        </tr>
+        <% @beers_rated.each do |beer, score| %>
+        <tr>
+          <td><%= beer %></td><td></td><td><%= score %></td>
+        </tr>
+        <% end %>
+      </table>
 
 
-      <% @ratings_for_beers.each do |rating| %>
-      <li><%= rating.beer.name %> - <%= rating.score %></li>
-      <% end %>
-    </ol>
+    </div>
+
+
+
+
+    <div>
+    <h2>Rated Families</h2>
+
+      <table cellpadding="0" cellspacing="0" class="">
+        <tr>
+          <td>Families</td><td></td><td>Scores</td>
+        </tr>
+        <% @families_rated.each do |family, score| %>
+        <tr>
+          <td><%= family %></td><td></td><td><%= score %></td>
+        </tr>
+        <% end %>
+      </table>
+
+
+    </div>
+
 
   </div>
-
-
-</div>

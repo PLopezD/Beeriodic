@@ -16,18 +16,28 @@ get '/users/:id' do
 		session[:id] = User.find(params[:id])
 		@user_info = User.find(params[:id])
 
-    # @ratings_for_beers = @user_info.ratings.where("rateable_type = ?", "Beer")
-    # @beers_rated = []
-    # @ratings_for_beers.each do |rating|
-    #   @beers_rated << Beer.find(rating.rateable_id)
-    # end
 
-    @ratings_for_beers = Rating.includes(:beers)
-    # @beers_rated = []
-    # @ratings_for_beers.each do |rating|
-    #   @beers_rated << Beer.find(rating.rateable_id)
-    # end
-    
+    # User's rated beers
+    @ratings_for_beers = @user_info.ratings.where("rateable_type = ?", "Beer")
+
+    @beers_rated = {}
+
+    @ratings_for_beers.each do |rating|
+      @beers_rated.store(Beer.find(rating.rateable_id).name, rating.score)
+    end
+
+    @beers_rated = @beers_rated.sort_by { |beer, score| beer }
+
+    # User's rated families
+    @ratings_for_families = @user_info.ratings.where("rateable_type = ?", "Family")
+
+    @families_rated = {}
+
+    @ratings_for_families.each do |rating|
+      @families_rated.store(Family.find(rating.rateable_id).name, rating.score)
+    end
+
+    @families_rated = @families_rated.sort_by { |family, score| family }
 
 
 	erb :user_profile 
