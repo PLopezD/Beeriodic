@@ -11,7 +11,6 @@ families.each do |family|
 		)
 end
 
-
 @beers = Bartender::Beer.all
 
 13.times do
@@ -53,6 +52,23 @@ User.create(
 	last_name: "McQuillen"
 	)
 
+3000.times do
+	Rating.create(
+		user_id: 				[*1..(User.all.length)].sample,
+		score:      		[*1..5].sample,
+		rateable_type: 	"Beer",
+		rateable_id: 		[*1..(Beer.all.length)].sample
+		)
+end
+
+1000.times do
+	Rating.create(
+		user_id: 				[*1..(User.all.length)].sample,
+		score:      		[*1..5].sample,
+		rateable_type: 	"Family",
+		rateable_id: 		[*1..(Family.all.length)].sample
+		)
+end
 
 
 

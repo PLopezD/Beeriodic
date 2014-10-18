@@ -1,4 +1,4 @@
-get '/' do
+get '/user' do
   erb :index
 end
 
