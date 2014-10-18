@@ -3,7 +3,6 @@ get '/' do
 # 	# beeriodic table
 # 	# assuming session[:id] = user_id
 # 	@user_info = User.find(session[:id])
-
 erb :index
 end
 
