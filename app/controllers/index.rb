@@ -1,19 +1,68 @@
 # # landing page 
 get '/' do
-# 	# beeriodic table
-# 	# assuming session[:id] = user_id
-# 	@user_info = User.find(session[:id])
+#   # beeriodic table
+#   # assuming session[:id] = user_id
+#   @user_info = User.find(session[:id])
+  if session[:user_id] != nil
+    @user_id = session[:user_id]
+    @user = User.find(@user_id)
+  end
 erb :index
 end
 
-# ------ >> 
+# FOR TESTING ONLY
+get '/session-viewer' do
+  session.inspect
+  # User.find_by(username: params[:username]).inspect
+end
 
+# ------ >> 
 #user section
+
+# CREATE USER ----------------------------------
+get '/users/new' do
+	#create user
+	erb :user_create
+end
+
+post '/users' do
+  user = User.create(email: params[:email],password: params[:password],first_name: params[:first_name],last_name: params[:last_name])
+  session[:user_id] = user.id
+  redirect "/"
+end
+
+# LOGIN ----------------------------------
+
+get '/login' do
+  erb :user_login
+end
+
+
+post '/login' do
+  user = User.find_by(email: params[:email])
+  if user.authenticate(params[:password])
+    session[:user_id] = user.id
+    redirect '/'
+  else
+    erb :user_login
+  end
+end
+
+# LOGOUT ----------------------------------
+
+get '/logout' do
+  session.delete(:user_id)
+  redirect '/'
+end
+
+
+# USER PROFILE ----------------------------------
+
 get '/users/:id' do
-	#user profile page
-	#link to update and delete pages 
-		session[:user_id] = User.find(3).id
-		@user_info = User.find(params[:id])
+  #user profile page
+  #link to update and delete pages 
+    # session[:user_id] = User.find(3).id
+    @user_info = User.find(params[:id])
 
 
     # User's rated beers
@@ -39,14 +88,10 @@ get '/users/:id' do
     @families_rated = @families_rated.sort_by { |family, score| family }
 
 
-	erb :user_profile 
+  erb :user_profile 
 end
 
-# post '/register' do
-# 	#create user
-# 	User.create(email: params[:email],password: params[:password],first_name: params[:first_name],last_name: params[:last_name])
-# 	redirect '/users/:id'
-# end
+# EDIT USER PROFILE ----------------------------------
 
 get '/users/:id/edit' do
   @user_info = User.find(params[:id])
@@ -62,12 +107,15 @@ patch '/users/:id' do
 	redirect "/users/#{user_id}"
 end
 
-# delete '/users/:id' do
-# 	#delete user
-# 	User.find(params[:id]).destroy
-# 	redirect '/'
-# end
-# # ----->>
+# EDIT USER PROFILE ----------------------------------
+
+delete '/users/:id' do
+	#delete user
+	User.find(params[:id]).destroy
+  session.delete(:user_id)
+	redirect '/'
+end
+# ----->>
 
 
 # #families section 
