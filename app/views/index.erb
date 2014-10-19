@@ -9,6 +9,16 @@
   <div class="span-16 last">
 
     <div id='beerlist'>beer list test
+
+    </div>
+    <div style="color:#FFFFFF;">
+    <% if @user_id %>
+    Welcome <a href="/users/<%= @user.id %>"><%= @user.first_name %></a>! &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/logout">Log out</a>
+        <% else %>
+        <a href="/login">Sign in</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; <a href="/users/new">Create a profile!</a>
+        <% end %>
+
+        <br><br><br>
     </div>
     <div class="span-1">
         &nbsp;
