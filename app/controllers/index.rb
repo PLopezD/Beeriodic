@@ -162,22 +162,41 @@ end
 
 post '/beers/:id/rating' do
     type = params[:type].capitalize.chop
-    Rating.create(
+    @rating = Rating.create(
         user_id: session[:user_id],
         score: params[:form],
         rateable_id: params[:type_id],
         rateable_type: type
         )
+
+    if request.xhr?
+      erb :_rating_row, layout: false, locals: { rating: @rating }
+    else
+      redirect "/beers/#{@rating.rateable_id}"
+    end
+
+
+
+
+
+
+
 # Rating.create(user_id: 1, score: 5, rateable_id: 3, rateable_type: "Beer")
 end
 
 post '/families/:id/rating' do
     type = params[:type].capitalize.chop
-    Rating.create(
+    @rating = Rating.create(
         user_id: session[:user_id],
         score: params[:form],
         rateable_id: params[:type_id],
         rateable_type: type
         )
+
+    if request.xhr?
+      erb :_rating_row, layout: false, locals: { rating: @rating }
+    else
+      redirect "/families/#{@rating.rateable_id}"
+    end
 # Rating.create(user_id: 1, score: 5, rateable_id: 3, rateable_type: "Beer")
 end
