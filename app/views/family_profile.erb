@@ -34,7 +34,7 @@
 		</tr>
 		<% @family.ratings.each do |rating| %>
 		<tr>
-			<td><%= rating.user.first_name %> <%= rating.user.last_name %></td>
+			<td><a href="/users/<%= rating.user_id %>"><%= rating.user.first_name %> <%= rating.user.last_name %></a></td>
 			<td><%=rating.score%></td>
 		</tr>
 		<% end %>
