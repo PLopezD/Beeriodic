@@ -21,16 +21,26 @@ $(document).ready(function(){
 //         }, 200, function(){movingDiv.removeClass("moving");});
 //     }
 // );
-    $("div.element div.mask").on('click', function(){
+    $("div.element").on('click', function(){
         $(this).addClass('clicked')
-        // test = $('.clicked .top .left').innerHTML;
-         // test = document.getElementById("left").innerHTML;
-        myVar = $(".clicked").find('.top .left').val();
+        myVar = $(".element.clicked .content .top .left").text()
         console.log(myVar);
-        // console.log("in the click listener")  
+        console.log("in the click listener")  
         $('#beerlist').text('replace old text')
+        formData = {fam_id: myVar}
 
-        // $(this).removeClass('clicked')
+              $.get('/landing',formData,function(res){
+            }).success(function(response){
+              console.log(typeof response)
+              var res = $.parseJSON(response)
+              console.log(res)
+              console.log(typeof res)
+              show_recent_streaks(res);
+            })
+
+
+
+        $(this).removeClass('clicked')
     })
 })
 

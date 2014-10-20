@@ -1,4 +1,4 @@
-ruby '2.1.2'
+ruby '2.1.3'
 source 'https://rubygems.org'
 
 # PostgreSQL driver
@@ -14,7 +14,7 @@ gem 'bartender'
 gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 gem 'rake'
-
+gem 'pry'
 gem 'shotgun'
 
 group :test do
