@@ -21,16 +21,27 @@ $(document).ready(function(){
 //         }, 200, function(){movingDiv.removeClass("moving");});
 //     }
 // );
-    $("div.element div.mask").on('click', function(){
+    $("div.element").on('click', function(){
+        $('#beerlist').empty()
+        $('#family').empty()
         $(this).addClass('clicked')
-        // test = $('.clicked .top .left').innerHTML;
-         // test = document.getElementById("left").innerHTML;
-        myVar = $(".clicked").find('.top .left').val();
-        console.log(myVar);
-        // console.log("in the click listener")  
-        $('#beerlist').text('replace old text')
+        myVar = $(".element.clicked .content .top .left").text()
+        fam_name = $(".element.clicked .content .middle").text()
+        
+        formData = {fam_id: myVar}
 
-        // $(this).removeClass('clicked')
+              $.get('/landing',formData,function(res){
+            }).success(function(response){
+              var res = $.parseJSON(response)
+
+            $('#beerlist').append("<a href=beers/"+res[2].id+">"+res[2].name+"</a>")
+            $('#beerlist').append(",")
+            $('#beerlist').append("<a href=beers/"+res[3].id+">"+res[3].name+"</a>")
+            $('#beerlist').append(",")
+            $('#beerlist').append("<a href=beers/"+res[4].id+">"+res[4].name+"</a>")
+            })
+            $('#family').append("<a href=families/"+myVar+">"+fam_name+"</a>")
+        $(this).removeClass('clicked')
     })
 })
 
