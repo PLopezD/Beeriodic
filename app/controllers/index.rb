@@ -300,10 +300,10 @@ end
 get '/landing' do
 
 
-fam_info = Family.find(params[:fam_id])
-beer_info = Family.find(params[:fam_id]).beers
+fam_info = Family.find(params[:fam_id]).to_json
+beer_info = Family.find(params[:fam_id]).beers.limit(5).to_json
 # beeriodic table
-binding.pry
+# binding.pry
 
 end
 

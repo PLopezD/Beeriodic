@@ -22,22 +22,25 @@ $(document).ready(function(){
 //     }
 // );
     $("div.element").on('click', function(){
+        $('#beerlist').empty()
         $(this).addClass('clicked')
         myVar = $(".element.clicked .content .top .left").text()
-        console.log(myVar);
+        fam_name = $(".element.clicked .content .middle").text()
         
-        $('#beerlist').text('replace old text')
         formData = {fam_id: myVar}
 
               $.get('/landing',formData,function(res){
             }).success(function(response){
-              // console.log(response)
               var res = $.parseJSON(response)
-              console.log(response)
-              // console.log(typeof res)
-              console.log("successful ajax call")  
+              // console.log(res[1].name)
+              // console.log(res[2].name)
+              console.log(res[4].name)
+              console.log(res[3].name)
+              // console.log("successful ajax call")
             })
-
+        // console.log(myVar);
+        // console.log(fam_name);
+            $('#beerlist').append("<a href=families/"+myVar+">"+fam_name+"</a>")
         $(this).removeClass('clicked')
     })
 })
