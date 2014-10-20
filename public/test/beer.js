@@ -25,20 +25,18 @@ $(document).ready(function(){
         $(this).addClass('clicked')
         myVar = $(".element.clicked .content .top .left").text()
         console.log(myVar);
-        console.log("in the click listener")  
+        
         $('#beerlist').text('replace old text')
         formData = {fam_id: myVar}
 
               $.get('/landing',formData,function(res){
             }).success(function(response){
-              console.log(typeof response)
+              // console.log(response)
               var res = $.parseJSON(response)
-              console.log(res)
-              console.log(typeof res)
-              show_recent_streaks(res);
+              console.log(response)
+              // console.log(typeof res)
+              console.log("successful ajax call")  
             })
-
-
 
         $(this).removeClass('clicked')
     })

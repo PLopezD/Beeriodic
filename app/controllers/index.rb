@@ -303,7 +303,7 @@ get '/landing' do
 fam_info = Family.find(params[:fam_id])
 beer_info = Family.find(params[:fam_id]).beers
 # beeriodic table
-# binding.pry
+binding.pry
 
 end
 
